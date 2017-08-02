@@ -116,6 +116,7 @@
         if (this.issue && this.issue.comments > 0) {
           this.$gitHubApi.getComments(this, this.issue.comments_url).then(response => {
             this.comments = response.data
+
           })
         }
       },
@@ -123,6 +124,7 @@
         this.$gitHubApi.getIssue(this, this.number).then(response => {
           this.issue = response.data
           this.getComments()
+
         })
       },
       back () {
@@ -143,8 +145,14 @@
         }
       }
     },
-    mounted: function () {
+    beforeMount: function () {
+
+    },
+    mounted: function () {        
+
+      
       this.$nextTick(function () {
+
         if (this.issue) {
           this.getComments()
         } else {
