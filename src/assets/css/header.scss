@@ -18,7 +18,7 @@ a {
     overflow-x: hidden;
     .b-header {
         width: 100%;
-        height: 9rem;
+        height: 5rem;
         line-height: 5rem;
         .fa {
             color: #fff;
@@ -39,15 +39,9 @@ a {
             color: #fff;
             margin-left: 1rem;
             font-size: 1.6rem;
+            text-align: center;
             
         }
-        .right {
-            float: right;          
-            img {
-                margin-right:0.5rem;
-                margin-top: 0.5rem;
-            }
-        }  
         .b-navbar {
             ul {
                 display: flex;
@@ -197,7 +191,7 @@ a {
                     }
                     &:active {
                     background-color: grey;
-                    color: #FA7198;
+                    color: #39C5BB;
                         
                     }
                     .mint-cell-wrapper {
@@ -209,7 +203,7 @@ a {
                      margin-bottom: .7rem;
                     &:active {
                     background-color: grey;
-                    color: #FA7198;
+                    color: #39C5BB;
                     }
                     img {
                         margin-left: .7rem;
@@ -345,4 +339,8 @@ a {
     li:last-child {
       margin-right: 0px;
     }
+  }
+
+.puzi {
+    color: #39C5BB;
   }

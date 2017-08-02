@@ -4,7 +4,7 @@
       <span class="title">{{issue.title.trim()}}</span>
     </div>
     <div class="title-container1">
-      <span class="tag tag-small" v-for="label in issue.labels" :key="label.id" @click="setActiveLabel(label)"
+      <span class="tag tag-small" v-for="label in issue.labels" :key="label.id" 
             :style="{ backgroundColor: '#' + label.color}">{{label.name}}</span>
     </div>
 
@@ -21,6 +21,7 @@
   $title-container-height: 3rem;
 
   .blog-detail-container {
+    margin-top:3rem;
     @include excludeLabelListHeightBox();
   }
 
@@ -37,7 +38,7 @@
     .title {
       width: 100%;
       font-size: 2rem;
-      color: #d6504f;
+      color: #39C5BB;
     }
   }
 
@@ -76,6 +77,7 @@
     cursor: pointer;
     user-select: none;
     margin: 30px 0px;
+    margin-bottom: 6rem;
     height: 50px;
     line-height: 50px;
     text-align: center;

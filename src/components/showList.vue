@@ -1,26 +1,52 @@
 <template>
   <div class="blog-list-container">
-    <div class="table-header">
-      <span>乐谱来源</span>
-      <span>/ 标签</span>
-    </div>
-    <div class="scrollable-container">
-      <ul class="issue-list">
-        <li v-for="issue in issues" :key="issue.id">
-          <router-link class="mr30" :to="{name:'showDetail', params: {number: issue.number, issue: issue}}">
-            {{issue.title.trim().substring(0, 35)}}
-          </router-link>
-          <span class="tag tag-small" v-for="label in issue.labels" :key="label.id" @click="setActiveLabel(label)"
-                :style="{ backgroundColor: '#' + label.color}">{{label.name}}</span>
-        </li>
-      </ul>
-      <div class="bottom-bar">
-        <input type="text" class="fl query" v-model="keyword" placeholder="点击这里搜索你想要的谱子"
-               @keyup.enter="searchIssues()"/>
-        <pagination class="pagination" :totalNum="totalNum" :currentPage="currentPage" :pageSize="pageSize"
-                    @currentPageChanged="handleCurrentPageChanged"/>
+    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="告诉JE酱~ 你又想要什么奇怪的谱子 →_→"
+               @keyup.enter="searchIssues()" />
+    <datalist id="wlmslist" style="color: #39C5BB">
+        <option value="鸟之诗">鸟之诗</option>
+        <option value="届かない恋">届かない恋</option>
+        <option value="聖なる日の祈り">聖なる日の祈り</option>
+    </datalist>
+
+    <transition name="fade">
+<!--       <labels-list class="label" />  -->
+      <div  class="pic" v-show="!listShow">
+        <img src="../assets/image/logo.png">
       </div>
-    </div>
+    </transition>
+
+    <transition name="fade">
+      <div  v-show="listShow">
+        <div class="table-header" v-if="totalNum" >
+          <span>乐谱来源</span>
+          <span>/ 标签</span>
+        </div>
+        <div class="scrollable-container">
+          <ul class="issue-list">
+            <li v-for="issue in issues" :key="issue.id">
+              <router-link class="mr30" :to="{name:'showDetail', params: {number: issue.number, issue: issue}}">
+                {{issue.title.trim().substring(0, 35)}}
+              </router-link>
+              <span class="tag tag-small" v-for="label in issue.labels" :key="label.id" @click="setActiveLabel(label)"
+                    :style="{ backgroundColor: '#' + label.color}">{{label.name}}</span>
+            </li>
+          </ul>
+          <div class="slogan" v-if="!totalNum" >
+            <p>肥肠抱歉，您要找的谱子暂时还没入库 - -！</p>
+            <br>
+            <a href="https://github.com/zytx121/justice_eternal/issues"><p style="color: #39C5BB">欢迎上传！阿里嘎多！</p></a>
+            
+          </div>
+
+          <div class="bottom-bar" v-if="totalNum>=10" >
+            <pagination class="pagination" :totalNum="totalNum" :currentPage="currentPage" :pageSize="pageSize"
+                        @currentPageChanged="handleCurrentPageChanged"/>
+          </div>
+        </div>
+      </div>
+    </transition>
+          
+
   </div>
 </template>
 <style lang="scss" scoped>
@@ -34,11 +60,23 @@
   .blog-list-container {
     @include excludeLabelListHeightBox();
   }
+  .pic {
+    margin-top:7rem;
+    text-align: center;
+  }
+  .slogan {
+      color: #CCC;
+      font-weight: 500;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-top: 5rem;
+  }
 
   .tag {
+    font-size: 1rem;
     border-radius: 50%;
     padding: 0.2rem .5rem;
-    margin-right: .3rem;
+    margin-right: .2rem;
   }
 
   .issue-list {
@@ -106,6 +144,10 @@
     background: url("../assets/image/enter-icon.svg") no-repeat calc(100% - 10px) center;
     background-color: #f9fafc;
   }
+  .query:focus {   
+    border: solid 2px #39C5BB; 
+}  
+
 
   .query::placeholder {
       color: #bbb;
@@ -115,28 +157,38 @@
     float: right;
     margin: 16px 0px;
   }
+
+  .label {
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+  }
+
 </style>
 <script>
   import { mapGetters, mapActions } from 'vuex'
   import Pagination from '../components/Pagination.vue'
-
+  import LabelsList from './LabelsList.vue'
   export default {
     data () {
       return {
+        listShow: false,
         keyword: '',
         totalNum: 0,
         currentPage: 1,
-        pageSize: 10,
+        pageSize: 20,
         issues: []
       }
     },
-    components: {Pagination},
+    components: {
+      Pagination,
+      LabelsList
+    },
     watch: {
       activeLabel: function (label) {
         this.keyword = ''
-        this.totalNum = 0
+        
         this.currentPage = 1
-        this.pageSize = 10
+        this.pageSize = 20
         this.getIssues()
       }
     },
@@ -149,12 +201,15 @@
       ...mapActions([
         'updateActiveLabel'
       ]),
+
       setActiveLabel (label) {
         this.updateActiveLabel(label)
       },
       searchIssues () {
+        this.listShow = true
         this.currentPage = 1
-        this.getIssues()
+        this.getIssues1()
+
       },
       handleCurrentPageChanged (val) {
         this.currentPage = val
@@ -170,12 +225,23 @@
           this.totalNum = response.data.total_count
           this.issues = response.data.items
         })
+      },
+      getIssues1 () {
+        this.$gitHubApi.getIssues(this, {
+          label: '',
+          keyword: this.keyword,
+          currentPage: this.currentPage,
+          pageSize: this.pageSize
+        }).then(response => {
+          this.totalNum = response.data.total_count
+          this.issues = response.data.items
+        })
       }
     },
     mounted: function () {
-      this.$nextTick(function () {
-        this.getIssues()
-      })
+      // this.$nextTick(function () {
+      //   this.getIssues()
+      // })
     }
   }
 </script>

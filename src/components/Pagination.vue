@@ -61,7 +61,7 @@
     border: solid 1px #ebeef0;
     font-size: 14px;
     text-align: center;
-    color: #03a9f4;
+    color: #39C5BB;
     outline: none;
   }
 
@@ -91,7 +91,7 @@
       pageSize: {
         type: [Number, String],
         required: false,
-        default: 10,
+        default: 20,
         validator (val) {
           return val >= 5
         }

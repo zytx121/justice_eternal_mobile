@@ -1,4 +1,4 @@
-$netpink: #d6504f;
+$netpink: #39C5BB;
 
 .totalRecommond {
     height: 20%;
@@ -11,8 +11,9 @@ $netpink: #d6504f;
     }
 
     .recommond {
-        color: #d6504f;
-        font-weight: 800;
+        color: #39C5BB;
+        font-weight: 500;
+        font-size: 1.6rem;
         margin-left: .5rem;
     }
 
@@ -99,8 +100,28 @@ $netpink: #d6504f;
 }
 
 .slogan {
-    color: #d6504f;
+    color: #FFBFCB;
     font-weight: 500;
     font-size: 1.6rem;
     text-align: center;
+}
+
+    .author {
+        text-align: center;
+        color: #FFBFCB;
+        font-weight: 500;
+        font-size: 1.6rem;
+    }
+
+
+.wrapper {
+    width: 100%;
+}
+
+.line{
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+    height: .1rem;
+    background: #ddd;
+
 }

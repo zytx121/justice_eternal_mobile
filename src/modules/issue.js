@@ -41,7 +41,7 @@ const getters = {
     return state.labels
   },
   labels1: (state) => {
-    return state.labels.filter(label => label.name.match(/^[A-Z]$/))
+    return state.labels.filter(label => label.name.match(/[^A-Z]/))
   },
   showLabels: (state) => {
     return state.showLabels

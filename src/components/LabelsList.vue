@@ -1,7 +1,8 @@
 <template>
   <ul v-if="showLabels" class="label-list">
+
     <li>
-      <span class="tag" v-if="activeLabel == null" style="background-color: #3593f2;">ALL</span>
+      <span class="tag" v-if="activeLabel == null" style="background-color: #39C5BB;">ALL</span>
       <span class="tag tag-unchecked" v-else @click="setActiveLabel(null)">ALL</span>
     </li>
     <li v-for="label in labels1" :key="label.id">
@@ -15,7 +16,7 @@
   </ul>
   <ul v-else class="label-list">
     <li>
-      <span class="tag" v-if="activeLabel == null" style="background-color: #3593f2;">ALL</span>
+      <span class="tag" v-if="activeLabel == null" style="background-color: #39C5BB;">ALL</span>
       <span class="tag tag-unchecked" v-else @click="setActiveLabel(null)">ALL</span>
     </li>
     <li  v-for="label in labels" :key="label.id">
@@ -24,7 +25,7 @@
       <span v-else class="tag tag-unchecked" @click="setActiveLabel(label)">{{label.name}}</span>
     </li>
     <li>
-      <span class="tag tag-unchecked"  @click="setShowLabels" style="color: #d6504f;"><</span>
+      <span class="tag tag-unchecked"  @click="setShowLabels" style="color: #39C5BB;"><</span>
     </li>
   </ul>
 
@@ -43,6 +44,7 @@
   .tag {
     border-radius: 50%;
     padding: .6em 1rem;
+    border: 1.7px solid #fff;
   }
 
   .tag-unchecked {

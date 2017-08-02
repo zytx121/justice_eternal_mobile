@@ -8,7 +8,6 @@ import About from '@/components/about.vue'
 import Comments from '@/components/comment.vue'
 import Instruction from '@/components/instruction.vue'
 import Start from '@/components/start.vue'
-import Drama from '@/components/drama.vue'
 import showRoutes from './show-routes'
 
 
@@ -20,7 +19,9 @@ export default new Router({
     {
       path: '/',
       name: 'show',
-      component: Show,
+      redirect: {
+      name: 'showList'
+      } 
     },
     {
     path: '/show',
@@ -49,10 +50,6 @@ export default new Router({
           component: Comments
         },
       ]
-    },
-    {
-      path: '/drama',
-      component: Drama
     },
     {
       path: '/about',
