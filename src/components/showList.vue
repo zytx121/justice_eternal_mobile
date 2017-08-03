@@ -28,7 +28,7 @@
               <ul class="issue-list">
                 <li v-for="issue in issues" :key="issue.id">
                   <router-link class="mr30" :to="{name:'showDetail', params: {number: issue.number, issue: issue}}">
-                    {{issue.title.trim().substring(0, 35)}}
+                    {{issue.title.trim().substring(0, 20)}}
                   </router-link>
                   <span class="tag tag-small" v-for="label in issue.labels" :key="label.id" @click="setActiveLabel(label)"
                         :style="{ backgroundColor: '#' + label.color}">{{label.name}}</span>

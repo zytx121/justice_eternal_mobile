@@ -1,6 +1,6 @@
 <template>
     <div class="headpage">
-        <div class="b-header" v-if="($route.name !== 'showPlay' )  && ($route.name !== 'dramaPlay') && ($route.name !== 'recommondPlay') && ($route.name !== 'searchList')" :style="{backgroundColor: skinColor}">
+        <div class="b-header" v-if="($route.name !== 'showPlay' )  && ($route.name !== 'dramaPlay') && ($route.name !== 'recommondPlay') && ($route.name !== 'recommondPlay1') &&($route.name !== 'searchList')" :style="{backgroundColor: skinColor}">
             <i class="fa fa-bars" aria-hidden="true" @click="toggleSidebar"></i>
             <img src="../assets/image/avatar.png" @click="toggleSidebar" alt="" class="b-avatar">
             <span class="b-username" @click="toggleSidebar">Justice_Eternal</span>

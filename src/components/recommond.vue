@@ -16,10 +16,30 @@
       <div id="player4" class="aplayer" ref="ap4"></div>
       <div class="author"><a href="http://music.163.com/#/artist?id=1077060">♡ 翎渡 ♡</a></div>
       <div class="line"></div>
+
+
+
+       <p class="totalRecommond">
+          <img src="../assets/image/je3.png" alt="" width="50" height="50">
+          <span class="recommond">教学专区</span>
+      </p>
+
+      <div class="show-content">
+        <div class="showItem1 col-xs-6" @click="playDetail1(item.id)" v-for="item in recommondList1" key="item.id">
+            <img :src="item.pic" alt="" class="showImg">    
+            <div class="showInfo">
+                <span class="showTag">【{{item.typename}}】</span>
+                <span class="showTitle">{{item.title}}</span>
+            </div>
+       </div>
+      </div>
+
+
        <p class="totalRecommond">
           <img src="../assets/image/je3.png" alt="" width="50" height="50">
           <span class="recommond">视频专区</span>
       </p>
+
       <div class="show-content">
         <div class="showItem col-xs-6" @click="playDetail(item.aid)" v-for="item in recommondList" key="item.aid">
             <img :src="item.pic" alt="" class="showImg">    
@@ -55,7 +75,7 @@ import APlayer from 'aplayer'
 export default {
     data () {
         return {
-          "recommondList1": [
+          "recommondList": [
             {
             
                 "aid": 12667643,
@@ -139,7 +159,76 @@ export default {
                 "pic": "http://upload-images.jianshu.io/upload_images/2141706-03d8cfc36613bed0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
                 "src": "http://otr48sjv5.bkt.clouddn.com/1.%E3%80%90%E5%8F%A3%E7%90%B4%E3%80%91%E5%AE%AB%E5%B4%8E%E9%AA%8F%E5%8A%A8%E7%94%BB%E9%85%8D%E4%B9%90%E7%BB%84%E6%9B%B2%20%E6%B2%A1%E6%9C%89%E5%8F%A3%E7%90%B4%E7%8E%A9%E6%88%91%E8%A6%81%E6%AD%BB%E4%BA%86-1.1%28Av6695303,P1%29.mp4"
             }
+    ],
+
+"recommondList1": [
+            {
+            
+                "id": 1000001,
+                "typename": "排骨大大",
+                "title": "八度和音入门与浅谈",
+                "author": "sqrsqr32",
+                "description": "",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "src": "http://otr48sjv5.bkt.clouddn.com/%E5%85%AB%E5%BA%A6%E5%92%8C%E9%9F%B3%E5%85%A5%E9%97%A8%E4%B8%8E%E6%B5%85%E8%B0%88.mp4"
+            },
+            {
+            
+                "id": 1000002,
+                "typename": "排骨大大",
+                "title": "颤音，震音",
+                "author": "sqrsqr32",
+                "description": "",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "src": "http://otr48sjv5.bkt.clouddn.com/%E9%A2%A4%E9%9F%B3%EF%BC%8C%E9%9C%87%E9%9F%B3.mp4"
+            },
+            {
+            
+                "id": 1000003,
+                "typename": "排骨大大",
+                "title": "断奏",
+                "author": "sqrsqr32",
+                "description": "",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "src": "http://otr48sjv5.bkt.clouddn.com/%E6%96%AD%E5%A5%8F.mp4"
+            },
+            {
+            
+                "id": 1000004,
+                "typename": "排骨大大",
+                "title": "花舌",
+                "author": "sqrsqr32",
+                "description": "",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "src": "http://otr48sjv5.bkt.clouddn.com/%E8%8A%B1%E8%88%8C.mp4"
+            },
+            {
+            
+                "id": 1000005,
+                "typename": "排骨大大",
+                "title": "快速演奏入门和概述",
+                "author": "sqrsqr32",
+                "description": "",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "src": "http://otr48sjv5.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%BC%94%E5%A5%8F%E5%85%A5%E9%97%A8%E5%92%8C%E6%A6%82%E8%BF%B0.mp4"
+            },
+            {
+            
+                "id": 1000006,
+                "typename": "排骨大大",
+                "title": "移琴，推键",
+                "author": "sqrsqr32",
+                "description": "",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "src": "http://otr48sjv5.bkt.clouddn.com/%E7%A7%BB%E7%90%B4%EF%BC%8C%E6%8E%A8%E9%94%AE.mp4"
+            }
+            
     ]
+
+
+
+
+
            }
     },
     components: {
@@ -147,13 +236,17 @@ export default {
     },
     created () {
 
-      this.$store.state.recommondList = this.recommondList1
+      this.$store.state.recommondList = this.recommondList
+      this.$store.state.recommondList1 = this.recommondList1
     
     },
     computed: {
-        recommondList() {
-            return this.$store.state.recommondList
-        }
+        // isrecommondList() {
+        //     return this.$store.state.recommondList
+        // },
+        // isrecommondList1() {
+        //     return this.$store.state.recommondList1
+        // }
     },
     mounted () {
             var ap1 = new APlayer({
@@ -310,6 +403,11 @@ export default {
         playDetail(aid) {
             this.$router.push(
                  {name: 'recommondPlay', params: {'aid': aid}}
+             )
+        },
+        playDetail1(id) {
+            this.$router.push(
+                 {name: 'recommondPlay1', params: {'id': id}}
              )
         }
     }

@@ -15,6 +15,9 @@ import UtilJS from './assets/js/util.js'
 import account from './modules/account'
 import issue from './modules/issue'
 import {gitHubApi, isGetUserInfo} from './utils'
+import 'gitalk/dist/gitalk.css'
+
+
 
 Vue.prototype.util = UtilJS
 Vue.prototype.$highlight = highlight
@@ -47,7 +50,8 @@ const store = new Vuex.Store({
     state: {
         banner: [],
         recommondList: [],
-        skinColor: localStorage.skinColor || '#d6504f',
+        recommondList1: [],
+        skinColor: localStorage.skinColor || '#39C5BB',
         searchList: '',
         dramaList: [],
         searchTitle: '',

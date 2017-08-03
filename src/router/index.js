@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Show from '@/components/show.vue'
 import Recommond from '@/components/recommond.vue'
 import recommondPlay from '@/components/recommondPlay.vue'
+import recommondPlay1 from '@/components/recommondPlay1.vue'
 import Info from '@/components/info.vue'
 import About from '@/components/about.vue'
 import Comments from '@/components/comment.vue'
@@ -49,6 +50,18 @@ export default new Router({
           name: 'Comments',
           component: Comments
         },
+      ]
+    },
+    {
+      path: '/recommondPlay1/:id',
+      name: 'recommondPlay1',
+      component: recommondPlay1,
+      child: [
+        {
+          path: '/recommondPlay1/:id/info',
+          name: 'Info',
+          component: Info
+        }
       ]
     },
     {
