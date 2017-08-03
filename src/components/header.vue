@@ -53,12 +53,12 @@
                      </ul>
                      <ul class="other-site">
                         <li>
-                          <a href="https://tieba.baidu.com/f?ie=utf-8&kw=justice_eternal&fr=search">
+                          <a href="https://tieba.baidu.com/f?ie=utf-8&kw=justice_eternal&fr=search" target="_blank">
                             <img src="../assets/image/tieba.png">
                           </a>
                         </li>
                         <li>
-                          <a href="https://github.com/zytx121/justice_eternal">
+                          <a href="https://github.com/zytx121/justice_eternal" target="_blank">
                             <img src="../assets/image/github.png">
                           </a>
                         </li>

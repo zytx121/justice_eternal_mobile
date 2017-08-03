@@ -12,7 +12,13 @@
     <div class="comment-container">
       <comment :comment="issue"/>
       <comment v-for="comment in comments" :key="comment.id" :comment="comment"/>
-      <div v-if="issue" @click="remark" class="remark">评论</div>
+      <div id="gitalk-container" ></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
   </div>
 </template>
@@ -92,6 +98,7 @@
   }
 </style>
 <script>
+  import Gitalk from 'gitalk'
   import { mapActions } from 'vuex'
   import Comment from '../components/Comment.vue'
 
@@ -152,6 +159,15 @@
 
       
       this.$nextTick(function () {
+          var gitalk = new Gitalk({
+                clientID: '45a4adb3e60063d0bb7c',
+                clientSecret: '6538ec3b188702e9ddaab5899a49a48781e57957',
+                repo: 'justice-eternal.github.io',
+                owner: 'Justice-Eternal',
+                admin: ['zytx121'],
+              })
+
+              gitalk.render('gitalk-container')
 
         if (this.issue) {
           this.getComments()

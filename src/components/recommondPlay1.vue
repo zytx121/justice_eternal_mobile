@@ -32,7 +32,13 @@
               <p class="desc">{{list.description}}</p>
           </div>
       </div>
-      <div id="gitalk-container"></div>
+      <div id="gitalk-container" ></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
   </div>
 
 </template>
@@ -97,8 +103,8 @@ export default {
       clientID: '45a4adb3e60063d0bb7c',
       clientSecret: '6538ec3b188702e9ddaab5899a49a48781e57957',
       repo: 'justice-eternal.github.io',
-      owner: 'zytx121',
-      admin: ['GlacierStudioQ'],
+      owner: 'Justice-Eternal',
+      admin: ['zytx121'],
     })
 
     gitalk.render('gitalk-container')
