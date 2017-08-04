@@ -19,6 +19,7 @@
     "marked": "^0.3.6",
     "mint": "^0.3.5",
     "mint-ui": "^2.2.7",
+    "muse-ui": "^2.1.0",
     "node-sass": "^4.5.3",
     "react-flip-move": "^2.9.14",
     "sass-loader": "^6.0.5",

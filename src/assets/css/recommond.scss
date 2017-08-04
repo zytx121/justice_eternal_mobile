@@ -1,13 +1,19 @@
 $netpink: #39C5BB;
+.wrapper{
+    width:500px;
+}
+
 
 .totalRecommond {
     height: 20%;
     padding-top: 1rem;
     margin-bottom: .6rem;
+    width: 500px;
 
     > img {
         vertical-align: middle;
         margin-left: .8rem;
+        
     }
 
     .recommond {
@@ -17,16 +23,13 @@ $netpink: #39C5BB;
         margin-left: .5rem;
     }
 
-    .ranking {
-        float: right;
-        margin-right: 1.2rem;
-    }
-
 }
 
 .show-content {
     width: 100%;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     background: white;
 
     padding: {
@@ -42,7 +45,7 @@ $netpink: #39C5BB;
     .showItem {
         padding: {
         }
-
+        width: 14rem;
         height: 16.5rem;
         margin-right: 3.33%;
         margin-bottom: 5%;
@@ -149,14 +152,26 @@ $netpink: #39C5BB;
     }
 
 
-.wrapper {
-    width: 100%;
-}
+
 
 .line{
     margin-top: 3rem;
     margin-bottom: 0rem;
     height: .1rem;
     background: #ddd;
+    justify-content:center;
+}
 
+@media screen and (min-width:500px){
+    .wrapper {
+        width: 500px;
+        margin: 1rem auto;
+    }
+}
+
+@media screen and (max-width:500px){
+    .wrapper {
+        width: 98%;
+        margin: 1rem auto;
+    }
 }

@@ -20,8 +20,9 @@
           <span>/ 标签</span>
         </div>
 
-
+          
           <div class="main-body" :style="{'-webkit-overflow-scrolling': scrollMode}"> 
+          <mu-paper :zDepth="1">
             <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" :auto-fill="false" topPullText="上面啥也没有，别看了- -！"  topLoadingText="" topDropText="上面啥也没有，别看了- -！"  bottomPullText="上拉加载更多谱子！"bottomDropText="快放开JE酱 (｡・`ω´･)"  ref="loadmore" style="font-size: 1.5rem; color: #39C5BB">  
               <ul class="issue-list" style="color: #000">
                 <li v-for="issue in issues" :key="issue.id">
@@ -31,19 +32,22 @@
                   <span class="tag tag-small" v-for="label in issue.labels" :key="label.id" @click="setActiveLabel(label)"
                         :style="{ backgroundColor: '#' + label.color}">{{label.name}}</span>
                 </li>
+                <mu-back-top/>
               </ul>
-              <br>
-              <br>
-            </mt-loadmore>
 
+            </mt-loadmore>
+              </mu-paper>
             <div class="slogan" v-if="!totalNum" >
               <p>肥肠抱歉，您要找的谱子暂时还没入库 - -！</p>
               <br>
               <a href="https://github.com/zytx121/justice_eternal/issues" target="_blank" ><p style="color: #39C5BB">欢迎上传！阿里嘎多！</p></a>
             </div>
 
-            <div class="slogan" :v-if="moreShow" >
+            <div class="slogan" v-if="moreShow" >
               <p>没有更多了</p>
+            </div>
+            <div class="slogan" v-else >
+              <p>下拉拯救世界！</p>
             </div>
               <br>
               <br>
@@ -57,6 +61,7 @@
           
 
   </div>
+
 </template>
 <style lang="scss" scoped>
   @import "../assets/css/common";
@@ -66,9 +71,12 @@
   $title-pdding-left: 67px;
   $bottom-bar-height: 70px;
 
-  .blog-list-container {
-    @include excludeLabelListHeightBox();
+
+  .main-body {
+    width:98%;
+    margin: .5rem auto;
   }
+
   .pic {
     margin-top:7rem;
     text-align: center;
@@ -78,7 +86,7 @@
       font-weight: 500;
       font-size: 1.6rem;
       text-align: center;
-      margin-top: 5rem;
+      margin-top: 2rem;
   }
 
   .tag {
@@ -89,7 +97,7 @@
   }
 
   .issue-list {
-    margin-left: -2rem;
+    margin-left: -4rem;
     .mr30 {
       font-weight: 600;
       margin-right: .5rem;    
@@ -113,7 +121,7 @@
   }
 
   .table-header {
-    margin-left: -2rem;
+    margin-left: -4rem;
     height: $table-header-height;
     background-color: #f9fafc;
     font-size: 14px;
@@ -129,18 +137,16 @@
 
  
 
-  .bottom-bar {
-    height: $bottom-bar-height;
-    margin-top: 50px;
-    padding: 0px 40px;
-  }
+
 
   .query {
     margin-top: 11px;
     margin-bottom: 5px;
-    margin-left: .5rem;
+    margin-left: .3rem;
+ 
+
     height: 16px;
-    width: 84%;
+    width: 98%;
     border-radius: 3px;
     padding: 15px 30px 15px 15px;
     border: solid 1px #eeeeee;

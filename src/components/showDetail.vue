@@ -1,4 +1,5 @@
 <template>
+
   <div v-if="issue" class="blog-detail-container">
     <div class="title-container">
       <span class="title">{{issue.title.trim()}}</span>
@@ -8,11 +9,14 @@
             :style="{ backgroundColor: '#' + label.color}">{{label.name}}</span>
     </div>
 
-
     <div class="comment-container">
       <comment :comment="issue"/>
       <comment v-for="comment in comments" :key="comment.id" :comment="comment"/>
+      <br>
+      <br>
+      <mu-paper :zDepth="2">
       <div id="gitalk-container" ></div>
+      </mu-paper>
       <br>
       <br>
       <br>

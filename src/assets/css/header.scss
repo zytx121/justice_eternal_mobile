@@ -74,25 +74,9 @@ a {
             }
         }     
     }
-    .b-content {
-            position: relative;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 55.5rem;
-            overflow-x: hidden;
-            background-color: #fff;
-          
-    }
 
-    .b-sidebar.fold-enter-active,
-    .b-sidebar.fold-leave-active {
-    transition: all 0.5s;
-    }
-    .b-sidebar.fold-enter,
-    .b-sidebar.fold-leave-active {
-    transform: translate3d(-100%, 0, 0);
-    }
+
+
     .b-sidebar {
         position: fixed;
         top: 0;
@@ -101,72 +85,7 @@ a {
         width: 60%;
         z-index: 100;
         background-color: #d6504f;
-        transform: translate3d(0, 0, 0);
-        .b-user {
-            position: relative;
-            width: 100%;
-            height: 25.7%;
-            > img {
-                width: 5.8rem;
-                height: 5.8rem;
-                border-radius: 50%;
-                margin-top: 1.5rem;
-                margin-left: 1.5rem;
-            }
-            .icon {
-                float: right;
-                margin-right: 2.0rem;
-                margin-top: 1.5rem;
-                .fa {
-                     font-size: 1.7rem;
-                     border-radius: 50%;
-                     border: .17rem solid white;
-                     padding: .5rem;
-                     text-align: center;
-                 }
-                 .fa-envelope {
-                     margin-right: -1.0rem;
-                 }
-            }
-            .user-desc {
-                position: absolute;
-                left: 1.3rem;
-                bottom: .8rem;
-                width: 15rem;
-                height: 5rem;
-                margin-top: 3rem;
-                line-height: 1.75rem;
-                .user-username {
-                    color: #fff;
-                    font-weight:700;
-                    margin-top: .2rem;
-                    margin-right: 1.0rem;
-                    font-size: 1.6rem;
-                 }
-                 .user-grade {
-                     color: #fff;
-                     border-radius: .35rem;
-                     border: 1.7px solid #fff;
-                     padding: {
-                         left: .3rem;
-                         right: .3rem;
-                     }
-                 }
-                 .user-vip {
-                     background-color: rgba(255,255,255,.8);
-                     border: .05rem solid #fff;
-                     border-radius: .35rem;
-                     margin-right: .5rem;
-                     padding: {
-                         left: .35rem;
-                         right: .35rem;
-                    }
-                 }
-                 .user-money {
-                     color: #fff;
-                 }
-            }
-        }
+        
         .b-sideItem {
             width: 100%;
             height: 100%;
@@ -344,3 +263,127 @@ a {
 .puzi {
     color: #39C5BB;
   }
+
+
+
+  @media screen and (max-width:400px){
+    .b-content {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 667px;
+            overflow-x: hidden;
+            background-color: #fff;
+          
+    }
+}
+
+  @media screen and (max-width:700px) and (min-width:400px){
+    .b-content {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 736px;
+            overflow-x: hidden;
+            background-color: #fff;
+          
+    }
+}
+
+
+  @media screen and (min-width:700px){
+    .b-content {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1024px;
+            overflow-x: hidden;
+            background-color: #fff;
+          
+    }
+}
+
+
+@media screen and (min-width: 1000px)  {
+       .b-content {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1366px;
+            overflow-x: hidden;
+            background-color: #fff;
+          
+    }
+
+
+}
+
+.b-user {
+            position: relative;
+            width: 100%;
+            height: 160px;
+            > img {
+                width: 5.8rem;
+                height: 5.8rem;
+                border-radius: 50%;
+                margin-top: 1.5rem;
+                margin-left: 1.5rem;
+            }
+            .icon {
+                float: right;
+                margin-right: 2.0rem;
+                margin-top: 1.5rem;
+                .fa {
+                     font-size: 1.7rem;
+                     border-radius: 50%;
+                     border: .17rem solid white;
+                     padding: .5rem;
+                     text-align: center;
+                 }
+                 .fa-envelope {
+                     margin-right: -1.0rem;
+                 }
+            }
+            .user-desc {
+                position: absolute;
+                left: 1.3rem;
+                bottom: .8rem;
+                width: 15rem;
+                height: 5rem;
+                margin-top: 3rem;
+                line-height: 1.75rem;
+                .user-username {
+                    color: #fff;
+                    font-weight:700;
+                    margin-top: .2rem;
+                    margin-right: 1.0rem;
+                    font-size: 1.6rem;
+                 }
+                 .user-grade {
+                     color: #fff;
+                     border-radius: .35rem;
+                     border: 1.7px solid #fff;
+                     padding: {
+                         left: .3rem;
+                         right: .3rem;
+                     }
+                 }
+                 .user-vip {
+                     background-color: rgba(255,255,255,.8);
+                     border: .05rem solid #fff;
+                     border-radius: .35rem;
+                     margin-right: .5rem;
+                     padding: {
+                         left: .35rem;
+                         right: .35rem;
+                    }
+                 }
+                 .user-money {
+                     color: #fff;
+                 }
+            }
+        }

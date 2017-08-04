@@ -22,6 +22,7 @@ ul li {
     span {
         margin-top: .9rem;
         margin-right: 2rem;
+        font-size: 1.2rem;
     }
 
     img {
@@ -52,6 +53,11 @@ ul li {
         .info {
             margin-left: .5rem;
             margin-right: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .comment {
+            font-size: 1.6rem;
         }
 
         a {
@@ -83,7 +89,7 @@ ul li {
         margin-left: .7rem;
         margin-right: .3rem;
         margin-top: .7rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .num {
@@ -100,6 +106,7 @@ ul li {
         margin-top: 1rem;
         margin-left: 1.0rem;
         margin-right: .5rem;
+        font-size: 1.6rem;
     }
 
     .tagAll {
@@ -113,6 +120,7 @@ ul li {
             top: 1rem;
             left: -.5rem;
             display: block;
+            font-size: 1.6rem;
         }
 
         .tag {

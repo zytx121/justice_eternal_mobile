@@ -16,6 +16,9 @@ import account from './modules/account'
 import issue from './modules/issue'
 import {gitHubApi, isGetUserInfo} from './utils'
 import 'gitalk/dist/gitalk.css'
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
+import 'muse-ui/dist/theme-teal.css' // 使用 carbon 主题
 
 
 
@@ -26,7 +29,8 @@ Vue.prototype.$gitHubApi = gitHubApi
 Vue.prototype.$isGetUserInfo = isGetUserInfo
 Vue.use(VueAxios, axios);
 
-Vue.use(Vuex);
+Vue.use(Vuex)
+Vue.use(MuseUI)
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -51,7 +55,7 @@ const store = new Vuex.Store({
         banner: [],
         recommondList: [],
         recommondList1: [],
-        skinColor: localStorage.skinColor || '#39C5BB',
+        skinColor: localStorage.skinColor || '#009688',
         searchList: '',
         dramaList: [],
         searchTitle: '',

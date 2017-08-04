@@ -1,10 +1,12 @@
 <template>
   <div class="wrapper">
+  <mu-paper :zDepth="5">
        <v-swiper class="swiper"></v-swiper>
       <p class="totalRecommond">
           <img src="../assets/image/je6.png" alt="" width="50" height="50">
           <span class="recommond">录音专区</span>
       </p>
+
       <div id="player5" class="aplayer" ref="ap5"></div>
       <div class="author"><a href="http://http://5sing.kugou.com/34713615/default.html">♡ 流萤川小时 ♡</a></div>
       <div id="player1" class="aplayer" ref="ap1"></div>
@@ -24,7 +26,7 @@
           <span class="recommond">教学专区</span>
       </p>
 
-      <div class="show-content">
+<!--       <div class="show-content">
         <div class="showItem1 col-xs-6" @click="playDetail1(item.id)" v-for="item in recommondList1" key="item.id">
             <img :src="item.pic" alt="" class="showImg">    
             <div class="showInfo">
@@ -32,41 +34,40 @@
                 <span class="showTitle">{{item.title}}</span>
             </div>
        </div>
-      </div>
+      </div> -->
+        <div class="gridlist-demo-container">
+          <mu-grid-list class="gridlist-demo">
+            <mu-grid-tile  v-for="item in recommondList1" key="item.aid">
+              <img :src="item.pic" @click="playDetail1(item.id)" />
+              <span slot="title" @click="playDetail1(item.id)">{{item.title}}</span>
+              <span slot="subTitle">by <b>{{item.author}}</b></span>
+            </mu-grid-tile>
+          </mu-grid-list>
+        </div>
 
 
        <p class="totalRecommond">
-          <img src="../assets/image/je3.png" alt="" width="50" height="50">
+          <img src="../assets/image/je4.png" alt="" width="50" height="50">
           <span class="recommond">视频专区</span>
       </p>
-
-      <div class="show-content">
-        <div class="showItem col-xs-6" @click="playDetail(item.aid)" v-for="item in recommondList" key="item.aid">
-            <img :src="item.pic" alt="" class="showImg">    
-            <div class="showInfo">
-                <span class="showTag">【{{item.typename}}】</span>
-                <span class="showTitle">{{item.title}}</span>
-                <div class="showUser">
-                    <span class="showAuthor">{{item.author}}</span>
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                    <span class="showNum">{{item.play}}</span>
-                </div>
-            </div>
-       </div>
-      </div>
+        <div class="gridlist-demo-container">
+          <mu-grid-list class="gridlist-demo">
+            <mu-grid-tile  v-for="item in recommondList" key="item.aid" >
+              <img :src="item.pic" @click="playDetail(item.aid)"/>
+              <span slot="title" @click="playDetail(item.aid)">{{item.title}}</span>
+              <span slot="subTitle">by <b>{{item.author}}</b></span>
+            </mu-grid-tile>
+          </mu-grid-list>
+        </div>
+    
+    </mu-paper>
+          <br>
+      <br>
       <br>
       <br>
 
-      <br>
-      <br>
-      <br>
-      <div class="slogan">如果米娜希望将自己的得意之作展示出来~</div>
-      <div class="slogan">欢迎将歌曲链接或者文件发给我！</div>
-      <br>
-      <br>
-      <br>
-      <br>
   </div>
+
 </template>
 
 <script>
@@ -179,7 +180,7 @@ export default {
                 "title": "颤音，震音",
                 "author": "sqrsqr32",
                 "description": "",
-                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-b829195f5ccbf574.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
                 "src": "http://otr48sjv5.bkt.clouddn.com/%E9%A2%A4%E9%9F%B3%EF%BC%8C%E9%9C%87%E9%9F%B3.mp4"
             },
             {
@@ -189,7 +190,7 @@ export default {
                 "title": "断奏",
                 "author": "sqrsqr32",
                 "description": "",
-                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-693930646f308805.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
                 "src": "http://otr48sjv5.bkt.clouddn.com/%E6%96%AD%E5%A5%8F.mp4"
             },
             {
@@ -199,7 +200,7 @@ export default {
                 "title": "花舌",
                 "author": "sqrsqr32",
                 "description": "",
-                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-de120b8f12fdec7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
                 "src": "http://otr48sjv5.bkt.clouddn.com/%E8%8A%B1%E8%88%8C.mp4"
             },
             {
@@ -209,7 +210,7 @@ export default {
                 "title": "快速演奏入门和概述",
                 "author": "sqrsqr32",
                 "description": "",
-                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-abfad72355b9cd53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
                 "src": "http://otr48sjv5.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%BC%94%E5%A5%8F%E5%85%A5%E9%97%A8%E5%92%8C%E6%A6%82%E8%BF%B0.mp4"
             },
             {
@@ -219,7 +220,7 @@ export default {
                 "title": "移琴，推键",
                 "author": "sqrsqr32",
                 "description": "",
-                "pic": "http://upload-images.jianshu.io/upload_images/2141706-864e45115c886b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+                "pic": "http://upload-images.jianshu.io/upload_images/2141706-b9b5c98e412b388c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
                 "src": "http://otr48sjv5.bkt.clouddn.com/%E7%A7%BB%E7%90%B4%EF%BC%8C%E6%8E%A8%E9%94%AE.mp4"
             }
             
@@ -416,5 +417,16 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/css/recommond.scss';
+.gridlist-demo-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gridlist-demo{
+  width: 500px;
+  
+  overflow-y: auto;
+}
 
 </style>
