@@ -1,13 +1,15 @@
 <template>
 
+        <div class="headpage">
+        <div class="b-header" v-if="($route.name !== 'showPlay' )  && ($route.name !== 'dramaPlay') && ($route.name !== 'recommondPlay') && ($route.name !== 'recommondPlay1') &&($route.name !== 'searchList')" :style="{backgroundColor: skinColor}">
+            <i class="fa fa-bars" aria-hidden="true" @click="toggle(true)"></i>
+            <img src="../assets/image/avatar.png" @click="toggle(true)" alt="" class="b-avatar">
+            <span class="b-username" @click="toggle(true)">Justice_Eternal</span>
+        </div>
+
         <div class="b-content">
 
-            <div class="headpage">
-            <div class="b-header" v-if="($route.name !== 'showPlay' )  && ($route.name !== 'dramaPlay') && ($route.name !== 'recommondPlay') && ($route.name !== 'recommondPlay1') &&($route.name !== 'searchList')" :style="{backgroundColor: skinColor}">
-                <i class="fa fa-bars" aria-hidden="true" @click="toggle(true)"></i>
-                <img src="../assets/image/avatar.png" @click="toggle(true)" alt="" class="b-avatar">
-                <span class="b-username" @click="toggle(true)">Justice_Eternal</span>
-            </div>
+
 
             <router-view></router-view>
 
