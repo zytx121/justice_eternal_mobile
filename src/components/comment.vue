@@ -1,5 +1,4 @@
 <template>
-<mu-paper :zDepth="2">
   <div class="comment">
     <div class="comment-title">
       <div @click="openGitHub()">
@@ -9,7 +8,6 @@
     </div>
     <article class="markdown-body" v-html="renderedMarkdown"/>
   </div>
-</mu-paper>
 </template>
 <style lang="scss" scoped>
   .comment {

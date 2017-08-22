@@ -256,7 +256,7 @@ export default {
         autoplay: false,
         showlrc: false,
         mutex: true,
-        theme: '#39C5BB',
+        theme: '#7e57c2',
         mode: 'random',
         music: [
             {
@@ -291,7 +291,7 @@ export default {
         autoplay: false,
         showlrc: false,
         mutex: true,
-        theme: '#39C5BB',
+        theme: '#7e57c2',
         mode: 'random',
         music: [
             {
@@ -320,7 +320,7 @@ export default {
         autoplay: false,
         showlrc: false,
         mutex: true,
-        theme: '#39C5BB',
+        theme: '#7e57c2',
         mode: 'random',
         music: [
             {
@@ -343,7 +343,7 @@ export default {
         autoplay: false,
         showlrc: false,
         mutex: true,
-        theme: '#39C5BB',
+        theme: '#7e57c2',
         mode: 'random',
         music: [
             {
@@ -372,7 +372,7 @@ export default {
         autoplay: false,
         showlrc: false,
         mutex: true,
-        theme: '#39C5BB',
+        theme: '#7e57c2',
         mode: 'random',
         music: [
             {

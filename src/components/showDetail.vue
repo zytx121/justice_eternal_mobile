@@ -12,17 +12,11 @@
     <div class="comment-container">
       <comment :comment="issue"/>
       <comment v-for="comment in comments" :key="comment.id" :comment="comment"/>
-      <br>
-      <br>
-      <mu-paper :zDepth="2">
+
+      <mu-paper :zDepth="1" class="gitalkpaper">
       <div id="gitalk-container" ></div>
       </mu-paper>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+
     </div>
   </div>
 </template>
@@ -81,6 +75,11 @@
     @include heightBox($title-container-height);
     overflow: scroll;
     padding: 0px 20px;
+  }
+
+  .gitalkpaper{
+    margin-top: 6rem;
+    margin-bottom: 10rem;
   }
 
   .remark {

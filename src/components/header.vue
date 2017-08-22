@@ -9,8 +9,6 @@
 
         <div class="b-content">
 
-
-
             <router-view></router-view>
 
         </div>
@@ -24,7 +22,7 @@
                     <img src="../assets/image/avatar.png" alt="">                    
                     <div class="icon" style="color: white">  
                         <i class="fa fa-moon-o" aria-hidden="true" @click="changeColor('black')" v-if="isShowSkin"></i>
-                        <i class="fa fa-sun-o" aria-hidden="true" @click="changeColor('#009688')" v-if="!isShowSkin"></i>
+                        <i class="fa fa-sun-o" aria-hidden="true" @click="changeColor('#7e57c2')" v-if="!isShowSkin"></i>
                     </div>  
                     <div class="user-desc">
                         <div>

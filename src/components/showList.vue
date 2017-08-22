@@ -1,15 +1,13 @@
 <template>
   <div class="blog-list-container">
-    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="告诉JE酱~ 你又想要什么奇怪的谱子 →_→"
+    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="先輩の力になれるよう努力します"
                @keyup.enter="searchIssues()" />
-    <datalist id="wlmslist" style="color: #39C5BB">
-        <option value="届かない恋">届かない恋</option>
-    </datalist>
+
 
     <transition name="fade">
 <!--       <labels-list class="label" />  -->
       <div  class="pic" v-show="!listShow">
-        <img src="../assets/image/logo.png" width="200px" height="240px">
+        <img src="../assets/image/logo.png" width="200px">
       </div>
     </transition>
 
@@ -23,7 +21,7 @@
           
           <div class="main-body" :style="{'-webkit-overflow-scrolling': scrollMode}"> 
           <mu-paper :zDepth="1">
-            <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" :auto-fill="false" topPullText="上面啥也没有，别看了- -！"  topLoadingText="" topDropText="上面啥也没有，别看了- -！"  bottomPullText="上拉加载更多谱子！"bottomDropText="快放开JE酱 (｡・`ω´･)"  ref="loadmore" style="font-size: 1.5rem; color: #39C5BB">  
+            <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" :auto-fill="false" topPullText="上面啥也没有，别看了- -！"  topLoadingText="" topDropText="上面啥也没有，别看了- -！"  bottomPullText="上拉加载更多谱子！"bottomDropText="快放开JE酱 (｡・`ω´･)"  ref="loadmore" style="font-size: 1.5rem; color: #7e57c2">  
               <ul class="issue-list" style="color: #000">
                 <li v-for="issue in issues" :key="issue.id">
                   <router-link class="mr30" :to="{name:'showDetail', params: {number: issue.number, issue: issue}}">
@@ -40,7 +38,7 @@
             <div class="slogan" v-if="!totalNum" >
               <p>肥肠抱歉，您要找的谱子暂时还没入库 - -！</p>
               <br>
-              <a href="https://github.com/zytx121/justice_eternal/issues" target="_blank" ><p style="color: #39C5BB">欢迎上传！阿里嘎多！</p></a>
+              <a href="https://github.com/zytx121/justice_eternal/issues" target="_blank" ><p style="color: #7e57c2">欢迎上传！阿里嘎多！</p></a>
             </div>
 
             <div class="slogan" v-if="moreShow" >
@@ -157,7 +155,7 @@
     background-color: #f9fafc;
   }
   .query:focus {   
-    border: solid 1px #39C5BB; 
+    border: solid 1px #7e57c2; 
 }  
 
 

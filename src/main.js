@@ -18,7 +18,7 @@ import {gitHubApi, isGetUserInfo} from './utils'
 import 'gitalk/dist/gitalk.css'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
-import 'muse-ui/dist/theme-teal.css' // 使用 carbon 主题
+import 'muse-ui/dist/theme-default.css' // 使用 carbon 主题
 
 
 
@@ -55,7 +55,7 @@ const store = new Vuex.Store({
         banner: [],
         recommondList: [],
         recommondList1: [],
-        skinColor: localStorage.skinColor || '#009688',
+        skinColor: localStorage.skinColor || '#7e57c2',
         searchList: '',
         dramaList: [],
         searchTitle: '',
