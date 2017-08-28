@@ -1,6 +1,6 @@
 <template>
   <div class="blog-list-container">
-    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="先輩の力になれるよう努力します"
+    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="天阶夜色凉如水，卧看牵牛织女星。"
                @keyup.enter="searchIssues()" />
 
 
