@@ -1,13 +1,14 @@
 <template>
   <div class="blog-list-container">
-    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="天阶夜色凉如水，卧看牵牛织女星。"
+    <input type="text" class="fl query" list="wlmslist" v-model="keyword" placeholder="只要能见到亚丝娜就算是神我也要打败他！"
                @keyup.enter="searchIssues()" />
 
 
     <transition name="fade">
 <!--       <labels-list class="label" />  -->
       <div  class="pic" v-show="!listShow">
-        <img src="../assets/image/logo.png" width="200px">
+        <img src="../assets/image/logo.png" width="300px">
+        <p style="color: #888">《刀剑神域 -序列之争-》 9月15日破元来袭</p>
       </div>
     </transition>
 
@@ -76,7 +77,7 @@
   }
 
   .pic {
-    margin-top:7rem;
+    margin-top:4rem;
     text-align: center;
   }
   .slogan {
